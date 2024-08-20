@@ -1,0 +1,105 @@
+body {
+    background: linear-gradient(90deg, #74e4de 30%, #01aeb4 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.cabeca {
+    background: linear-gradient(90deg, #58ddd6 30%, #01a1a7 100%);
+    padding: 10px;
+    text-align: right;
+    border-color: rgb(0, 204, 255);
+    border-style: groove;
+
+  border: 2px solid #f0f0f0;
+  border-radius: 1px;
+  font-size: 14px;
+}
+
+.cabeca a {
+    font-family: fantasy;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+.cabeca img {
+    height: 1.5cm;
+    width: 1.5cm;
+    margin: 0;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteudo-esquerda {
+    flex: 1;
+    color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 2cm;
+}
+
+.conteudo-direita {
+    flex: 1;
+    text-align: right;
+}
+
+.conteudo-direita img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
+
+.texto-centralizado {
+    text-align: center;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+.botao-centralizado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.agendar-botao {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #01a1a7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.agendar-botao:hover {
+    background-color: #008ba3;
+}
+
+.folder {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.folder img {
+    max-width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.mapa-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

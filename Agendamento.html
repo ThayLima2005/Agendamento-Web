@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<body style="background-color: #74e4de">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consultas</title>
+    <style>
+        .slot {
+            border: 3px solid rgb(172, 171, 171);
+            border-radius: 5%;
+            width: 200px;
+            height: 50px;
+            text-align:start;
+            cursor: pointer;
+            margin: 5px;
+            float:initial;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: rgb(226, 226, 226);
+        }
+        .slot:hover {
+            background-color: rgb(79, 202, 243);
+            border: 3px solid rgb(42, 183, 230);
+        }
+    </style>
+</head>
+<body>
+
+   
+<h1>Agendamento de Consultas</h1>
+    <input type="date" id="data" min="29" max="31" value="aa/aa/aaaa" oninput="data()">
+    <script>
+        function mudarAno() {
+            // Captura o elemento input do ano
+            var anoInput = document.getElementById("ano");
+            // Captura a tabela
+            var tabela = document.querySelector("table");
+
+            // Limpa as linhas da tabela
+            tabela.innerHTML = "<tr><th>Data</th><th>Dia da Semana</th><th>Atividades</th></tr>";
+
+            // Obtém o ano selecionado
+            var ano = parseInt(anoInput.value);
+
+            // Obtém a primeira data de janeiro do ano selecionado
+            var data = new Date(ano, 0, 1);
+            for (var i = 0; i < 12; i++) {
+                for (var j = 0; j < 6; j++) {
+                    // Verifica se o dia é segunda-feira a sábado (0 a 5 são os dias da semana no JavaScript)
+                    if (data.getDay() >= 1 && data.getDay() <= 6) {
+                        // Adiciona uma nova linha à tabela
+                        tabela.innerHTML += "<tr><td>" + data.toLocaleDateString() + "</td><td>" + data.toLocaleDateString('pt-BR', { weekday: 'long' }) + "</td><td></td></tr>";
+                    }
+                    // Incrementa a data para o próximo dia
+                    data.setDate(data.getDate() + 1);
+                }
+            }
+        }
+
+        window.onload = mudarAno;
+    </script>
+    <div class="day-container"></div>
+    <style>
+    .day-container {
+        text-align: center;
+    }
+    </style>
+    
+
+<div id="agenda">
+    <h3>Segunda-feira</h3>
+    <div class="slot" onclick="agendarConsulta('Segunda-feira', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Segunda-feira', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Segunda-feira', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Segunda-feira', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Segunda-feira', '21:30 às 22:15')">21:30 às 22:15</div>
+
+    <h3>Terça-feira</h3>
+    <div class="slot" onclick="agendarConsulta('Terça-feira', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Terça-feira', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Terça-feira', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Terça-feira', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Terça-feira', '21:30 às 22:15')">21:30 às 22:15</div>
+
+    <h3>Quarta-feira</h3>
+    <div class="slot" onclick="agendarConsulta('Quarta-feira', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Quarta-feira', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Quarta-feira', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Quarta-feira', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Quarta-feira', '21:30 às 22:15')">21:30 às 22:15</div>
+
+    <h3>Quinta-feira</h3>
+    <div class="slot" onclick="agendarConsulta('Quinta-feira', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Quinta-feira', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Quinta-feira', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Quinta-feira', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Quinta-feira', '21:30 às 22:15')">21:30 às 22:15</div>
+
+    <h3>Sexta-feira</h3>
+    <div class="slot" onclick="agendarConsulta('Sexta-feira', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Sexta-feira', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Sexta-feira', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Sexta-feira', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Sexta-feira', '21:30 às 22:15')">21:30 às 22:15</div>
+
+    <h3>Sabado</h3>
+    <div class="slot" onclick="agendarConsulta('Sabado', '18:30 às 19:15')">18:20 às 19:15</div>
+    <div class="slot" onclick="agendarConsulta('Sabado', '19:15 às 20:00')">19:15 às 20:00</div>
+    <div class="slot" onclick="agendarConsulta('Sabado', '20:00 às 20:45')">20:00 às 20:45</div>
+    <div class="slot" onclick="agendarConsulta('Sabado', '20:45 às 21:30')">20:45 às 21:30</div>
+    <div class="slot" onclick="agendarConsulta('Sabado', '21:30 às 22:15')">21:30 às 22:15</div>
+</div>
+
+<script>
+    function agendarConsulta(dia, horario) {
+        var confirma = confirm('Deseja agendar uma consulta em ' + dia + ' às ' + horario + '?');
+
+        if (confirma) {
+            alert('Consulta agendada com sucesso!');
+        }
+    }
+</script>
+////////////////////////
+<style>
+    #agenda {
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: aliceblue;
+}
+    h3 {
+        margin-top: 20px;
+    }
+
+
+</style>
+
+
+</body>
+</html>

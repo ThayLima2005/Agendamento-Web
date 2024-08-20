@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" href="./loginStyle.css" />
+
+    <title>Formulário</title>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Login</h2>
+      </div>
+
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="username">Nome de usuário</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Digite seu nome de usuário"
+          />
+        </div>
+        <div class="form-control">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha..."
+          />
+        </div>
+        <a href="Pagina.html"><button class="btn">Enviar</button></a>
+      </div>
+
+      
+
+      <script>
+//Formatar o negocio do telefone (54) etc...
+        document.getElementById('telefone').addEventListener('input', function (e) {
+            var input = e.target;
+            var value = input.value.replace(/\D/g, ''); 
+            var formattedValue = '';
+            if (value.length > 0) {
+                formattedValue = '(' + value.substring(0, 2);
+                if (value.length > 2) {
+                    formattedValue += ') ' + value.substring(2, 7);
+                }
+                if (value.length > 7) {
+                    formattedValue += '-' + value.substring(7, 11);
+                }
+            }
+
+            input.value = formattedValue;
+        });
+    </script>
+  </body>
+</html
